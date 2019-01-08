@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+videos:
+    label: eriks.gallery::lang.plugin.controllers.videos.relation.label
+    view:
+        list: $/eriks/gallery/models/video/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        list: $/eriks/gallery/models/video/columns.yaml
+        recordsPerPage: 10

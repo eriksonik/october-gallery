@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    order:
+        label: eriks.gallery::lang.plugin.models.video.columns.order
+    title:
+        label: eriks.gallery::lang.plugin.models.video.columns.title
+        searchable: true
+    yt_watch:
+        label: eriks.gallery::lang.plugin.models.video.columns.yt_watch
+        searchable: true
+    published:
+        label: eriks.gallery::lang.plugin.models.video.columns.published
+        type: switch
+    created_at:
+        label: eriks.gallery::lang.common.created_at
+        type: datetime
+    updated_at:
+        label: eriks.gallery::lang.common.updated_at
+        type: datetime

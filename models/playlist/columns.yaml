@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+    name:
+        label: eriks.gallery::lang.plugin.models.playlist.columns.name
+        searchable: true
+    videos_count:
+        label: eriks.gallery::lang.plugin.models.playlist.columns.video_count
+        relation: videos_count
+        valueFrom: count
+        default: 0
+    created_at:
+        label: eriks.gallery::lang.common.created_at
+        type: datetime
+    updated_at:
+        label: eriks.gallery::lang.common.updated_at
+        type: datetime

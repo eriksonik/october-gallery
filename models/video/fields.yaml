@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        span: left
+    title:
+        label: eriks.gallery::lang.plugin.models.video.fields.title
+        span: left
+    yt_watch:
+        label: eriks.gallery::lang.plugin.models.video.fields.yt_watch
+        span: left
+    order:
+        label: eriks.gallery::lang.plugin.models.video.fields.order
+        type: number
+        span: left
+        default: 50
+    published:
+        label: eriks.gallery::lang.plugin.models.video.fields.published
+        type: switch
+        default: true

@@ -1,2 +1,9 @@
-1.0.0:
-- Create version of Gallery.
+1.0.1:
+- Initial version of Gallery.
+- create_galleries_table.php
+1.0.2:
+- Add Category database and Category model.
+- create_categories_table.php
+1.0.3:
+- Add VideoPlaylists database, category and model.
+- create_videos_table.php
