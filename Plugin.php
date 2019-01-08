@@ -1,8 +1,10 @@
-<?php
+<?php namespace Eriks\Gallery;
 
-namespace Eriks\Gallery;
-
+//use App;
+//use Event;
+use Backend;
 use System\Classes\PluginBase;
+
 
 class Plugin extends PluginBase
 {
@@ -13,27 +15,90 @@ class Plugin extends PluginBase
             'name'        => 'eriks.gallery::lang.plugin.name',
             'description' => 'eriks.gallery::lang.plugin.description',
             'author'      => 'eriks.gallery::lang.plugin.author',
-            'icon'        => 'icon-newspaper-o',
+            'icon'        => 'icon-camera-retro',
             'homepage'    => 'https://github.com/eriksonik/october-gallery'
         ];
     }
 
-//    public function registerNavigation()
+    public function registerComponents()
+    {
+        return [
+            'Eriks\Gallery\Components\Gallery' => 'galleryId',
+            'Eriks\Gallery\Components\GallerySlug' => 'gallerySlug',
+            'Eriks\Gallery\Components\GalleriesList' => 'galleriesList',
+            'Eriks\Gallery\Components\SinglePlaylist' => 'Playlist',
+        ];
+    }
+
+//    public function registerPageSnippets()
 //    {
-//
+//        return [
+//            'Eriks\Gallery\Components\Gallery' => 'galleryId',
+//            'Eriks\Gallery\Components\GallerySlug' => 'gallerySlug',
+//            'Eriks\Gallery\Components\GalleriesList' => 'galleriesList'
+//        ];
 //    }
-//
+
+    public function registerNavigation()
+    {
+        return [
+            'gallery' => [
+                'label'       => 'eriks.gallery::lang.menu.label',
+                'url'         => Backend::url('eriks/gallery/galleries'),
+                'icon'        => 'icon-camera-retro',
+                'permissions' => ['eriks.gallery.*'],
+                'order'       => 500,
+
+                'sideMenu' => [
+//                    'new_gallery' => [
+//                        'label'       => 'raviraj.rjgallery::lang.menu.new_gallery',
+//                        'icon'        => 'icon-plus',
+//                        'url'         => Backend::url('eriks/gallery/galleries/create'),
+//                        'permissions' => ['raviraj.rjgallery.access_galleries']
+//                    ],
+                    'galleries' => [
+                        'label'       => 'eriks.gallery::lang.menu.galleries',
+                        'icon'        => 'icon-file-image-o',
+                        'url'         => Backend::url('eriks/gallery/galleries'),
+                        'permissions' => ['eriks.gallery.access_galleries']
+                    ],
+//                    'new_category' => [
+//                        'label'       => 'eriks.gallery::lang.menu.new_category',
+//                        'icon'        => 'icon-plus',
+//                        'url'         => Backend::url('eriks/gallery/categories/create'),
+//                        'permissions' => ['eriks.gallery.access_galleries']
+//                    ],
+                    'categories' => [
+                        'label'       => 'eriks.gallery::lang.menu.categories',
+                        'icon'        => 'icon-server',
+                        'url'         => Backend::url('eriks/gallery/categories'),
+                        'permissions' => ['eriks.gallery.access_categories']
+                    ],
+
+                    'videos' => [
+                        'label' => 'eriks.gallery::lang.plugin.navigation.sidemenu.videos.label',
+                        'icon' => 'icon-video-camera',
+                        'url' => Backend::url('eriks/gallery/videos'),
+                        'permissions' => ['eriks.gallery.access_videos']
+                    ],
+                    'playlists' => [
+                        'label' => 'eriks.gallery::lang.plugin.navigation.sidemenu.playlists.label',
+                        'icon' => 'icon-list',
+                        'url' => Backend::url('eriks/gallery/playlists'),
+                        'permissions' => ['eriks.gallery.access_playlists']
+                    ]
+
+                ]
+            ]
+        ];
+    }
+
 //    public function registerSettings()
 //    {
 //
 //    }
 //
 //    public function registerReportWidgets()
-//    {
-//
-//    }
-//
-//    public function registerComponents()
 //    {
 //
 //    }
@@ -47,12 +112,29 @@ class Plugin extends PluginBase
 //    {
 //
 //    }
-//
-//    public function registerPermissions()
-//    {
-//
-//    }
-//
+
+    public function registerPermissions()
+    {
+        $tab = 'YouTube Video Gallery';
+
+        return [
+            'eriks.gallery.*' => ['tab' => 'eriks.gallery::lang.plugin.name', 'label' => 'eriks.gallery::lang.permissions.all'],
+            'eriks.gallery.tab' => [
+                'label' => 'Show the YouTube Video Gallery tab in the backend',
+                'tab' => $tab
+            ],
+            'eriks.gallery.access_videos' => [
+                'label' => 'Access to the video section',
+                'tab' => $tab
+            ],
+            'eriks.gallery.access_playlists' => [
+                'label' => 'Access to the playlist section',
+                'tab' => $tab
+            ]
+        ];
+    }
+
+
 //    public function registerSchedule($schedule)
 //    {
 //        $schedule->command('queue:work --daemon --queue=newsletter')->everyMinute()->withoutOverlapping();

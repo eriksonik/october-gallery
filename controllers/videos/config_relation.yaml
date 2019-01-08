@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+playlists:
+    label: eriks.gallery::lang.plugin.controllers.playlists.relation.label
+    view:
+        list: $/eriks/gallery/models/playlist/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        list: $/eriks/gallery/models/playlist/columns.yaml
+        recordsPerPage: 10

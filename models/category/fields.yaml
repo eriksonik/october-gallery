@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        span: left
+        label: eriks.gallery::lang.modeldata.name
+        placeholder: eriks.gallery::lang.modeldata.name_placeholder
+
+    slug:
+        label: eriks.gallery::lang.modeldata.slug
+        span: right
+        placeholder: eriks.gallery::lang.modeldata.slug_placeholder
+        preset:
+            field: name
+            type: slug
+    
+    description:
+        label: eriks.gallery::lang.modeldata.description
+        span: full
+        type: textarea
+        placeholder: eriks.gallery::lang.modeldata.description_placeholder

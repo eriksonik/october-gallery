@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: eriks.gallery::lang.plugin.controllers.playlists.name
+
+# Model Form Field configuration
+form: $/eriks/gallery/models/playlist/fields.yaml
+
+# Model Class name
+modelClass: Eriks\Gallery\Models\Playlist
+
+# Default redirect location
+defaultRedirect: eriks/gallery/playlists
+
+# Create page
+create:
+    title: eriks.gallery::lang.plugin.controllers.playlists.create.title
+    redirect: eriks/gallery/playlists/update/:id
+    redirectClose: eriks/gallery/playlists
+
+# Update page
+update:
+    title: eriks.gallery::lang.plugin.controllers.playlists.update.title
+    redirect: eriks/gallery/playlists
+    redirectClose: eriks/gallery/playlists
+
+# Preview page
+preview:
+    title: Preview Playlist

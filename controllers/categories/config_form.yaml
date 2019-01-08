@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/eriks/gallery/models/category/fields.yaml
+
+# Model Class name
+modelClass: Eriks\Gallery\Models\Category
+
+# Default redirect location
+defaultRedirect: eriks/gallery/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: eriks/gallery/categories/update/:id
+    redirectClose: eriks/gallery/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: eriks/gallery/categories
+    redirectClose: eriks/gallery/categories
+
+# Preview page
+preview:
+    title: Preview Category

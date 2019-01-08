@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: eriks.gallery::lang.idgallery.title
+
+# Model Form Field configuration
+form: $/eriks/gallery/models/gallery/fields.yaml
+
+# Model Class name
+modelClass: Eriks\Gallery\Models\Gallery
+
+# Default redirect location
+defaultRedirect: eriks/gallery/galleries
+
+# Create page
+create:
+    title: eriks.gallery::lang.form.create
+    redirect: eriks/gallery/galleries/update/:id
+    redirectClose: eriks/gallery/galleries
+
+# Update page
+update:
+    title: eriks.gallery::lang.form.update
+    redirect: eriks/gallery/galleries
+    redirectClose: eriks/gallery/galleries
+
+# Preview page
+preview:
+    title: eriks.gallery::lang.form.preview
